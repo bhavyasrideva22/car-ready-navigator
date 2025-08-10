@@ -1,7 +1,9 @@
 import { Button } from '@/components/ui/button';
+import { useNavigate } from 'react-router-dom';
 import { Car, Menu } from 'lucide-react';
 
 export const Header = () => {
+  const navigate = useNavigate();
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-automotive-silver">
       <div className="container mx-auto px-4">
@@ -38,7 +40,11 @@ export const Header = () => {
             <Button variant="ghost" size="sm" className="hidden md:inline-flex">
               Sign In
             </Button>
-            <Button size="sm" className="bg-gradient-to-r from-primary to-primary-glow">
+            <Button 
+              size="sm" 
+              onClick={() => navigate('/assessment')}
+              className="bg-gradient-to-r from-primary to-primary-glow"
+            >
               Get Started
             </Button>
             <Button variant="ghost" size="sm" className="md:hidden">

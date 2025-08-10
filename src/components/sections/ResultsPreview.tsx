@@ -2,9 +2,11 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { ProgressRing } from '@/components/ui/progress-ring';
+import { useNavigate } from 'react-router-dom';
 import { CheckCircle, AlertCircle, HelpCircle, TrendingUp, BookOpen, Users } from 'lucide-react';
 
 export const ResultsPreview = () => {
+  const navigate = useNavigate();
   const sampleScores = {
     psychometric: 78,
     technical: 65,
@@ -209,6 +211,7 @@ export const ResultsPreview = () => {
         <div className="text-center mt-16">
           <Button 
             size="lg" 
+            onClick={() => navigate('/assessment')}
             className="bg-gradient-to-r from-primary to-primary-glow hover:shadow-automotive text-lg px-8 py-6"
           >
             Start Your Assessment Now

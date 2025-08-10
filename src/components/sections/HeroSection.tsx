@@ -2,9 +2,11 @@ import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Zap, Target, Brain, Cog } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 import heroImage from '@/assets/automotive-hero.jpg';
 
 export const HeroSection = () => {
+  const navigate = useNavigate();
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background */}
@@ -63,6 +65,7 @@ export const HeroSection = () => {
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Button 
             size="lg" 
+            onClick={() => navigate('/assessment')}
             className="bg-gradient-to-r from-primary to-primary-glow hover:shadow-automotive text-lg px-8 py-6"
           >
             Start Assessment
